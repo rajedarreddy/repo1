@@ -24,6 +24,17 @@ pipeline {
             }
         }
         stage('Deploy') {
+           input{
+            message:"Provide approval for prod"
+            ok "Deploy to prod"
+              parameters{
+
+                booleanParam(name:'DeployToProd',defaultValue:false ,description:'decide to deploy on prod')
+
+              }
+           }
+
+
             steps {
                 // Your deployment steps here
                 echo "deploying  in the environment:${params.Env}"
