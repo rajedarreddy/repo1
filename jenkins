@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Your build steps here
-              echo " building th application"
+              echo  'building th application'
             }
         }
         stage('Test') {
@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Your deployment steps here
-                echo "deploying  in the prod"
+                echo "deploying  in the environment:${params.Env}"
             }
         }
     }
