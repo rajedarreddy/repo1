@@ -3,13 +3,14 @@ pipeline {
     parameters{
         string(name:'Env' defaultValue:'Test', description:'Environment to deploy')
         booleanParam(name:'executeTests',defaultValue:true ,description:'decide to run tc')
+        choice(name:'APPVERSION',choices['15','15PRO MAX' '16'])
     }
 
     stages {
         stage('Build') {
             steps {
                 // Your build steps here
-              echo  'building th application'
+              echo  "Buid the code :${params.APPVERSION}"
             }
         }
         stage('Test') {
