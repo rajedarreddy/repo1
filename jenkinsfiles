@@ -1,0 +1,28 @@
+pipeline{
+   
+   agent any {
+    stages{
+        stage('bulid'){
+            steps
+
+            echo "Build The Application"
+        }
+
+        stage('Test'){
+            steps
+             echo "Run The Test Cases"
+        }
+
+
+        stage("Deploy"){
+            steps
+            echo "Deploy into prod server"
+        }
+    }
+
+
+         
+
+   }
+
+}
