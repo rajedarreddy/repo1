@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Deploy') {
            input{
-            message:"Provide approval for prod"
+            message "Provide approval for prod"
             ok "Deploy to prod"
               parameters{
 
